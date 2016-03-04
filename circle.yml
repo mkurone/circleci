@@ -3,9 +3,13 @@ machine:
     Asia/Tokyo
   php:
     version: 5.6.2
-    
+
+dependencies:
+  override:
+    - mkdir -p build/logs
+    - composer install --dev --no-interaction
+    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
+
 test:
   override:
-    - phpunit SampleTest
-  post:
-    - coveralls -v -service=circle-ci -repotoken $COVERALLS_TOKEN ./
+    - phpunit -c phpunit.xml.dist
