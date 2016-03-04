@@ -12,7 +12,6 @@ dependencies:
 
 test:
   override:
-//- phpunit -c tests/phpunit.xml.dist
     - phpunit
   post:
     - bin/coveralls -v --exclude-no-stmt
