@@ -8,4 +8,4 @@ test:
   override:
     - phpunit SampleTest
   post:
-    - bin/coveralls -v 
+    - coveralls -v -service=circle-ci -repotoken $COVERALLS_TOKEN ./
