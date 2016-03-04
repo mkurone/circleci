@@ -7,5 +7,5 @@ machine:
 test:
   override:
     - phpunit SampleTest
-　post:
+  post:
     - bin/coveralls -v 
