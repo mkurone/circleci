@@ -14,4 +14,4 @@ test:
   override:
     - phpunit -c tests/phpunit.xml.dist
   post:
-    - php bin/coveralls -v
+    - php vender/bin/coveralls -v
