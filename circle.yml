@@ -14,5 +14,5 @@ test:
   override:
     - phpunit --coverage-clover build/logs/clover.xml --configuration tests/phpunit.xml tests
   post:
-    - php vendor/bin/coveralls -v
-      #    - php coveralls -v
+    # - php vendor/bin/coveralls -v
+    - php coveralls -v
