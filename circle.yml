@@ -15,4 +15,5 @@ test:
     - phpunit --coverage-clover build/logs/clover.xml --configuration tests/phpunit.xml tests
   post:
     - php vendor/bin/coveralls -v
+    - phpmd Fuga.php text codesize,controversial
     # - php coveralls -v
