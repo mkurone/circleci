@@ -16,4 +16,5 @@ test:
   post:
     - php vendor/bin/coveralls -v
     - phpmd Fuga.php text codesize,controversial
+    - vender/bin/phpcs --standard=PSR2 Fuga.php
     # - php coveralls -v
