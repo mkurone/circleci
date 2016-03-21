@@ -8,7 +8,7 @@
 class Fuga {
 
     public function index() {
-        return true;
+        return true
     }
 
     public function index2() {
