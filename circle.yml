@@ -15,6 +15,6 @@ test:
     - phpunit --coverage-clover build/logs/clover.xml --configuration tests/phpunit.xml tests
   post:
     - php vendor/bin/coveralls -v
-    - phpmd Fuga.php text codesize,controversial
+    - git diff --name-only | grep '*.php$' | xargs bin/phpcs --report=summary --standard=./tests/phpcs.xml
     - vender/bin/phpcs --standard=PSR2 Fuga.php
     # - php coveralls -v
