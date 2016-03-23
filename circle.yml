@@ -15,4 +15,6 @@ test:
     - phpunit --coverage-clover build/logs/clover.xml --configuration tests/phpunit.xml tests
   post:
     - php vendor/bin/coveralls -v
-    - git diff --name-only | grep '*.php$' | xargs phpcs --report=summary --standard=./tests/phpcs.xml
+    - git diff --name-only origin/master | grep ".*.php$" | xargs phpcs --report=source --standard=./tests/phpcs.xml
+    - git diff --name-only origin/master | grep ".*.php$" | xargs phpcs --report=checkstyle --standard=./tests/phpcs.xml
+
